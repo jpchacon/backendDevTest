@@ -19,10 +19,8 @@ public class ProductController {
     ProductService productService;
 
     @GetMapping(value = "/{productId}/similar")
-    public ResponseEntity<SimilarProduct> getSimilarProducts(@NotNull @PathVariable("productId") Long productId) throws Exception {
-
+    public ResponseEntity<SimilarProduct> getSimilarProducts(@NotNull @PathVariable("productId") Long productId){
         SimilarProduct products = productService.getProducts(productId);
-
         return new ResponseEntity<SimilarProduct>(products, HttpStatus.OK);
     }
 }

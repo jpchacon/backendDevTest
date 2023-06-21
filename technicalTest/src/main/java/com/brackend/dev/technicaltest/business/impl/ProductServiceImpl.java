@@ -34,14 +34,14 @@ public class ProductServiceImpl implements ProductService {
 
         productClient.getProduct(productId);
 
-        List<Long> similaridProducts = productClient.getSimilarIdProducts(productId);
+        List<Long> similarIdProducts = productClient.getSimilarIdProducts(productId);
 
-        if(similaridProducts.isEmpty()){
+        if(similarIdProducts.isEmpty()){
             throw new BusinessException(HttpStatus.NO_CONTENT.value(), "There are no similar products");
         }
         List<ProductDetailModel> productsTmp = new ArrayList<>();
 
-        similaridProducts.forEach(idx->{
+        similarIdProducts.forEach(idx->{
             ProductDetailModel prodctDetail = productClient.getProduct(idx);
             productsTmp.add(prodctDetail);
         });
