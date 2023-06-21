@@ -1,0 +1,12 @@
+
+server:
+  port: 5000
+
+spring:
+  application:
+    name: similar-products-service
+
+external:
+  mock:
+    api:
+      base-url: http://localhost:3001/product
