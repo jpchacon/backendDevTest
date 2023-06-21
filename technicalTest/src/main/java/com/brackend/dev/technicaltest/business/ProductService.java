@@ -4,5 +4,5 @@ import com.brackend.dev.technicaltest.model.response.SimilarProduct;
 
 public interface ProductService {
 
-    public SimilarProduct getProducts(Long productId) throws Exception;
+    public SimilarProduct getProducts(Long productId);
 }
